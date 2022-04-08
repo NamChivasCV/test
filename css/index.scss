@@ -15,22 +15,94 @@ ul {
 }
 
 .navbar {
-    justify-content: flex-start;
+    justify-content: space-between;
     display: flex;
+    align-items: center;
     padding-left: 16px;
     max-height: 50px;
     box-shadow: 0px 1px 1px #88888864;
 
-    .menu-toggle-bar {
-        margin-right: 16px;
-        color: #34495e;
-        font-size: 20px;
+
+
+    .right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .menu-toggle-bar {
+            margin-right: 16px;
+            color: #34495e;
+            font-size: 20px;
+        }
+
+        .logo {
+            color: white;
+            margin-left: 10px;
+            height: 30px;
+        }
     }
 
-    .logo {
-        color: white;
-        margin-left: 10px;
-        height: 30px;
+    .mid {
+        border-radius: 2px;
+        display: flex;
+        align-items: center;
+
+        .search-box {
+            width: 400px;
+            justify-content: space-between;
+            padding: 0;
+            margin: 0;
+            border: 1px solid #dadadb;
+            display: flex;
+
+            input {
+                padding: 6px;
+                height: 35px;
+                border: none;
+            }
+
+            .fa-solid {
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                height: 35px;
+                width: 50px;
+                color: rgb(92, 92, 92);
+                background-color: rgb(240, 240, 240);
+            }
+        }
+
+        .fa-microphone {
+            margin-left: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: rgb(240, 240, 240);
+        }
+
+
+    }
+
+    .end {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        i {
+            font-size: 24px;
+            margin: 0 16px;
+        }
+
+        .avatar {
+            object-fit: cover;
+            border: 1px solid rgb(122, 122, 122);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
     }
 }
 
