@@ -1,0 +1,151 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.navbar {
+    justify-content: flex-start;
+    display: flex;
+    padding-left: 16px;
+    max-height: 50px;
+    box-shadow: 0px 1px 1px #88888864;
+
+    .menu-toggle-bar {
+        margin-right: 16px;
+        color: #34495e;
+        font-size: 20px;
+    }
+
+    .logo {
+        color: white;
+        margin-left: 10px;
+        height: 30px;
+    }
+}
+
+.contaniner {
+    height: calc(100vh-50px);
+    display: flex;
+
+    .side-bar {
+        box-shadow: 1px 0 8px #88888864;
+        height: calc(100vh - 50px);
+        width: 60px;
+        transition: .3s;
+        overflow: hidden;
+
+
+        &.active {
+            width: 250px;
+        }
+
+        ul {
+            color: #34495e;
+            margin: 3px;
+
+            hr {
+                margin: 0 auto;
+                width: 90%;
+            }
+
+            .item-side-bar {
+                margin: 8px;
+                overflow: hidden;
+
+                a {
+                    text-decoration: none;
+
+                    .item-box {
+                        white-space: nowrap;
+                        padding: 8px;
+                        text-align: start;
+                        color: #34495e;
+                        transition: .3s;
+                        border-radius: 6px;
+
+                        &:hover {
+                            background-color: #d7d7d7;
+                        }
+                    }
+
+                    .fa-solid {
+                        font-size: 20px;
+                        margin-right: 8px;
+                    }
+                }
+            }
+        }
+    }
+
+    .body {
+        overflow: scroll;
+        width: 100%;
+
+        .list-video-contanier {
+
+            ul {
+                display: grid;
+                grid-template-columns: 25% 25% 25% 25%;
+
+                .box-video {
+                    margin: 8px;
+                    width: 300px;
+                    padding: 8px;
+
+                    .thumbnail {
+                        width: 300px;
+                    }
+
+                    .title {
+                        padding: 4px 0;
+                        display: flex;
+                        flex-direction: row;
+
+                        .tittle {
+                            font-weight: 500;
+                            font-size: 14px;
+                        }
+
+                        .channel-cover {
+                            white-space: normal;
+                            margin-right: 8px;
+                            width: 30px;
+                            height: 30px;
+                            border-radius: 50%;
+                        }
+
+                        .child {
+                            display: flex;
+                            flex-direction: column;
+
+                            p {
+                                margin: 0;
+                                padding: 0;
+                            }
+
+                            .chanel-name,
+                            .detail {
+                                font-style: normal;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+
+        }
+    }
+}
