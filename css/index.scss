@@ -164,6 +164,28 @@ ul {
         overflow: scroll;
         width: 100%;
 
+        .abc {
+            padding: 8px;
+            margin-left: 16px;
+            display: flex;
+            align-items: center;
+
+            .item-abc {
+                cursor: pointer;
+                border-radius: 16px;
+                margin: 0 8px;
+                background-color: #ededed;
+                padding: 3px 16px;
+                border: 1px solid rgb(227, 227, 227);
+                transition: .3s;
+
+                &.active {
+                    background-color: #0b0b0b;
+                    color: white;
+                }
+            }
+        }
+
         .list-video-contanier {
 
             ul {

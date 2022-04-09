@@ -206,6 +206,33 @@ ul {
   width: 100%;
 }
 
+.contaniner .body .abc {
+  padding: 8px;
+  margin-left: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contaniner .body .abc .item-abc {
+  cursor: pointer;
+  border-radius: 16px;
+  margin: 0 8px;
+  background-color: #ededed;
+  padding: 3px 16px;
+  border: 1px solid #e3e3e3;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.contaniner .body .abc .item-abc.active {
+  background-color: #0b0b0b;
+  color: white;
+}
+
 .contaniner .body .list-video-contanier ul {
   display: -ms-grid;
   display: grid;

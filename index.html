@@ -120,6 +120,53 @@
         </div>
         <div class="body">
 
+            <ul class="abc">
+                <li onclick="toggleActiveItem($(this))" class="item-abc active">
+                    <span>All</span>
+                </li>
+
+                <li onclick="toggleActiveItem($(this))" class="item-abc">
+                    <span>dfsdgsd</span>
+                </li>
+
+                <li onclick="toggleActiveItem($(this))" class="item-abc">
+                    <span>tyjkety</span>
+                </li>
+
+                <li onclick="toggleActiveItem($(this))" class="item-abc">
+                    <span>wtr7uqa35j</span>
+                </li>
+
+                <li onclick="toggleActiveItem($(this))" class="item-abc">
+                    <span>Afgmnxfgmll</span>
+                </li>
+
+                <li onclick="toggleActiveItem($(this))" class="item-abc">
+                    <span>fghsgrfh</span>
+                </li>
+
+                <li onclick="toggleActiveItem($(this))" class="item-abc">
+                    <span>tuioltiul</span>
+                </li>
+
+                <li onclick="toggleActiveItem($(this))" class="item-abc">
+                    <span>qwete</span>
+                </li>
+            </ul>
+
+
+            <script>
+                function toggleActiveItem(context) {
+                    //Remove all class "active" of list item
+                    $(".item-abc").each((index, item) => {
+                        $(item).removeClass("active")
+                    })
+
+                    //Add class "active" to current item
+                    context.toggleClass("active")
+                }
+            </script>
+
             <div class="list-video-contanier">
                 <ul>
                     <li class="box-video">
