@@ -1,4 +1,5 @@
 <?php
+
 error_reporting(0);
 require_once(realpath($_SERVER["DOCUMENT_ROOT"]) . '/core/init.php');
 $iduser = $data_user['username'];
@@ -142,7 +143,7 @@ if (!$user) {
     } elseif (!$_POST['code']) {
         echo json_encode(array('status' => "error", 'title' => "Lỗi", 'msg' => "Chưa nhập mã thẻ"));
     } elseif ($_POST['menhgia'] == "chuachon") {
-        echo json_encode(array('status' => "error", 'title' => "Lỗi", 'msg' => "Vui lòng chọn mệnh giá thẻ"));
+        echo json_encode(array('status' => "error", 'title' => "Lỗi", 'msg' => "VUI LÒNG CHỌN MỆNH GIÁ THẺ"));
     } elseif (!$_POST['serial']) {
         echo json_encode(array('status' => "error", 'title' => "Lỗi", 'msg' => "Chưa nhập mã seri"));
     } else if ($_POST['type'] == "Viettel" && (strlen($_POST['serial']) != 11 && strlen($_POST['serial']) != 14)) {
@@ -278,46 +279,20 @@ if (!$user) {
 
 
             $request_id = rand(100000000, 999999999);  /// Cái này có thể mà mã order của bạn, nếu không có thì để nguyên ko cần động vào.
-            // $sign = md5($partner_id.$partner_key.$telco.$code.$serial.$amount.$request_id);
-            $dataPost = array();
-            $dataPost['request_id'] = $request_id;
-            $dataPost['code'] = $code;
-            $dataPost['partner_id'] = $partner_id;
-            $dataPost['serial'] = $serial;
-            $dataPost['telco'] = $telco;
-            $dataPost['command'] = 'charging';
+            $sign = md5($partner_id . $partner_key . $telco . $code . $serial . $amount . $request_id);
 
-            // $dataPost = array(
-            // 	'request_id' => $request_id,
-            // 	'partner_id' => $partner_id,
-            // 	'code' => $code,
-            // 	'serial' => $serial,
-            // 	'telco' => $telco,
-            //   	'command' => 'charging'
-            // );
-            ksort($dataPost);
-            $sign = $partner_key;
-            foreach ($dataPost as $item) {
-                $sign .= $item;
-            }
-            $mysign = md5($sign);
-            $dataPost['amount'] = $amount;
-            $dataPost['sign'] = $mysign;
+            $dataPost = array(
+                'partner_id' => $partner_id,
+                'request_id' => $request_id,
+                'telco' => $telco,
+                'amount' => $amount,
+                'serial' => $serial,
+                'code' => $code,
+                'sign' => $sign
+            );
 
-            $data = http_build_query($dataPost);
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, "http://api.naptudong.com/chargingws/v2");
-            curl_setopt($ch, CURLOPT_POST, 1);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-            $actual_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-            curl_setopt($ch, CURLOPT_REFERER, $actual_link);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            $result = curl_exec($ch);
-            curl_close($ch);
-
-            $obj = json_decode($result);
-            //$post = curl_post('http://api.naptudong.com/chargingws/v2', $dataPost);
-            //$obj = json_decode($post);
+            $post = curl_post('https://cardviet.vn/chargingws', $dataPost);
+            $obj = json_decode($post);
 
             if ($obj->status == 99) {
                 $now = getdate();
@@ -325,8 +300,8 @@ if (!$user) {
                 echo json_encode(array('status' => "success", 'title' => "Thành công", 'msg' => " Thẻ đang được xử lý ( thời gian xử lý 2 đến 5 phút ), Quý khách sẽ được cộng tiền ngay khi thẻ xử lý xong. Trân trọng !."));
             } else if ($obj->status == 3) {
                 echo json_encode(array('status' => "error", 'title' => "Lỗi", 'msg' => ' Sai seri hoặc mã thẻ, vui lòng nhập lại'));
-            } else {
-                echo json_encode(array('status' => "error", 'title' => "Lỗi", 'msg' => $obj->message));
+            } else if ($obj->status == NULL) {
+                echo json_encode(array('status' => "error", 'title' => "Lỗi", 'msg' => 'Ko tra ve callback'));
             }
         } else {
             $err = isset($msg) ? $msg : 'Thẻ bị trùng, vui lòng nhập thẻ khác';
