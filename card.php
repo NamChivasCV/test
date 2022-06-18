@@ -318,6 +318,8 @@ if (!$user) {
             $obj = json_decode($result);
             //$post = curl_post('http://api.naptudong.com/chargingws/v2', $dataPost);
             //$obj = json_decode($post);
+            
+            echo "ABXC";
 
             if ($obj->status == 99) {
                 $now = getdate();
