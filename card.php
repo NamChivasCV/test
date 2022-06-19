@@ -328,7 +328,7 @@ if (!$user) {
             } else if ($obj->status == 3) {
                 echo json_encode(array('status' => "error", 'title' => "Lỗi", 'msg' => ' Sai seri hoặc mã thẻ, vui lòng nhập lại'));
             } else {
-                echo json_encode(array('status' => "error", 'title' => "Lỗiii", 'msg' => $obj->message));
+                echo json_encode(array('status' => "error", 'title' => "Lỗi", 'msg' => $obj->message . "_"));
             }
         } else {
             $err = isset($msg) ? $msg : 'Thẻ bị trùng, vui lòng nhập thẻ khác';
