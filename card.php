@@ -319,8 +319,6 @@ if (!$user) {
             //$post = curl_post('http://api.naptudong.com/chargingws/v2', $dataPost);
             //$obj = json_decode($post);
             
-            echo "ABXC";
-
             if ($obj->status == 99) {
                 $now = getdate();
                 $db->query("INSERT INTO `history_card` (username,seri,code,name,menhgia,type_card,count_card,time) VALUES ('$iduser','$TxtSeri','$TxtMaThe','$name','$menhgia','$TxtCard','$vnd','$date_current')"); // lịch sử
@@ -328,7 +326,7 @@ if (!$user) {
             } else if ($obj->status == 3) {
                 echo json_encode(array('status' => "error", 'title' => "Lỗi", 'msg' => ' Sai seri hoặc mã thẻ, vui lòng nhập lại'));
             } else {
-                echo json_encode(array('status' => "error", 'title' => "Lỗi", 'msg' => $obj->message . "_"));
+                echo json_encode(array('status' => "error", 'title' => "Lỗi", 'msg' => $obj->message));
             }
         } else {
             $err = isset($msg) ? $msg : 'Thẻ bị trùng, vui lòng nhập thẻ khác';
