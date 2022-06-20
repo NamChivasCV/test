@@ -38,7 +38,7 @@ function getDir($path)
     foreach ($dir as $index => $val) {
         if ($index > 1) {
             $p =  $postDir . "/" . $val;
-            if (is_dir($val)) {
+            if (is_dir($p)) {
                 array_push($arrFolder, $p);
             } else {
                 array_push($arrFile, $p);
