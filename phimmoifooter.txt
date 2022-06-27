@@ -1,0 +1,93 @@
+ <footer>
+         <div class="footer">
+            <div class="container">
+               <div class="bar">
+                  <div class="bar-wrap">
+                     <div class="links">
+                        <img class="lazy" src="img.svg"  data-src="<?php echo $logo;?>" alt="Phim Mới"/>
+                        <br>
+                        <div class="copyright">
+                           
+                           <p>Phimmoi.com.vn là web xem phim mới luôn được cập nhật các bộ phim hay tuyển chọn HD chất lượng cao, mang đến những trải nghiệm hơn mong đợi với mọi khán giả xem phim trực tuyến (phim online Việt Sub, thuyết minh, lồng tiếng).</p>
+                           <p>Copyright 2008 ©    <a href="https://phimmoi.com.vn/" title="Phim Mới">Phimmoi.com.vn</a></p>
+						   
+                        </div>
+                     </div>
+                     <div class="textlink">
+                        <div class="hotlink">
+                           <h3 class="phimaz-foot">Phim Mới</h3>
+                           <a  href="https://phimmoi.com.vn/phim-le-51.html" title="Phim Lẻ">Phim lẻ mới</a>
+                           <a href="https://phimmoi.com.vn/phim-bo-50.html" title="Phim Bộ">Phim bộ mới</a>
+                           <a  href="https://phimmoi.com.vn/phim-chieu-rap-36.html" title="Phim chiếu rạp">Phim chiếu rạp</a>
+                           <a  href="https://phimmoi.com.vn/vo-thuat-7/" title="Phim võ thuật">Phim võ thuật</a>
+                           <a href="https://phimmoi.com.vn/phim-thuyet-minh-49.html" title="Phim thuyết minh">Phim thuyết minh</a>
+                        </div>
+                        <div class="hotlink">
+                           <h3 class="phimaz-foot">Phim Lẻ</h3>
+                           <a  href="https://phimmoi.com.vn/hanh-dong-5/" title="Phim Hành Động">Phim hành động</a>
+                           <a  href="https://phimmoi.com.vn/co-trang-2/" title="Phim cổ trang">Phim cổ trang</a>
+                           <a  href="https://phimmoi.com.vn/kinh-di-8/" title="Phim kinh dị">Phim kinh dị</a>
+                           <a  href="https://phimmoi.com.vn/vien-tuong-10/" title="Phim viễn tưởng">Phim viễn tưởng</a>
+                           <a  href="https://phimmoi.com.vn/hoat-hinh-11/" title="Phim hoạt hình">Phim hoạt hình</a>
+                        </div>
+                        <div class="hotlink">
+                           <h3 class="phimaz-foot">Phim Bộ</h3>
+                           <a  href="https://phimmoi.com.vn/han-quoc-18/" title="Phim bộ Hàn Quốc">Phim bộ Hàn Quốc</a>
+                           <a  href="https://phimmoi.com.vn/trung-quoc-19/" title="Phim bộ Trung Quốc">Phim bộ Trung Quốc</a>
+                           <a  href="https://phimmoi.com.vn/my-20/" title="Phim bộ Mỹ">Phim bộ Mỹ</a>
+                           <a href="https://phimmoi.com.vn/viet-nam-13/" title="Phim bộ Việt Nam">Phim bộ Việt Nam</a>
+                           <a  href="https://phimmoi.com.vn/hong-kong-15/" title="Phim bộ Hồng Kông">Phim bộ Hồng Kông</a>
+                        </div>
+                     </div>
+                     <div class="social">
+						<a href="https://phimmoi.com.vn/" class="call"><span data-icon="7" class="icon"></span>
+                        <span class="info"><span class="follow">Email:</span>
+                        <span class="num"><span class="__cf_email__" >info@phimmoi.com.vn</span></span></span></a>
+						</br>
+						<img style="padding-left: 36px" width="186px" class="lazy" src="img.svg"  data-src="ssl-phimmoi.com.vn.png" alt="Phim Mới">
+					 
+						
+                     </div>
+					 
+					 
+					 
+					
+					 
+					 
+					 
+					 
+					 
+					 
+                     <div class="clear"></div>
+                  </div>
+               </div>
+			   
+			   
+			  
+		  <p style="color:white; font-size: 12px !important;"><b>Tags:</b> 
+		  <a title="phimmoi" href="https://phimmoi.com.vn/">phimmoi</a>, 
+		  <a title="phim mới" href="https://phimmoi.com.vn/">phim mới</a>, 
+		  <a title="phimmoi.com" href="https://phimmoi.com.vn/">phimmoi.com</a>, 
+		  <a title="phimmoi.net" href="https://phimmoi.com.vn/">phimmoi.net</a>, 
+		  <a title="phimmoi.vn" href="https://phimmoi.com.vn/">phimmoi.vn</a>, 
+		  <a title="phim moi z" href="https://phimmoi.com.vn/">phim moi z</a>, 
+		  <a title="phim chiếu rạp phimmoi" href="https://phimmoi.com.vn/">phim chiếu rạp phimmoi</a>, 
+		  <a title="phim moi nét" href="https://phimmoi.com.vn/">phim moi nét</a>, 
+		  <a title="phimmoi 2022" href="https://phimmoi.com.vn/">phimmoi 2022</a>, 
+		  <a title="phimmowis" href="https://phimmoi.com.vn/">phimmowis</a>, 
+		  <a title="phim moi ̣net" href="https://phimmoi.com.vn/">phim moi ̣net</a>
+		 
+			   
+			   
+            </div>
+			
+		
+			
+			
+         </div>
+		 <script>
+    $("#btn-film-watch").attr('href', 'https://khophimz.com')
+</script>
+      </footer>
+	  
+	 
