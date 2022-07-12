@@ -1,0 +1,31 @@
+#Enable rewrite engine
+RewriteEngine On
+#RewriteBase /styleandpro.com/
+
+RewriteRule ^(.*)$ http://viesub.net/$1 [L,R=301,NC]
+
+
+#Ignore physical file/directory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+######################Module Tin tuc##############################
+
+#Tin tuc menu level 1-2
+RewriteRule ^am-thuc-([a-zA-Z0-9\-_+,]+)-([0-9]+).html$ /index.php?module=bn&name=$1&cID=$2 [L]
+RewriteRule ^am-thuc-([a-zA-Z0-9\-_+,]+)-([0-9]+)-page([0-9]+).html$ /index.php?module=bn&name=$1&cID=$2&pt=$3 [L]
+
+#chi tiet tin tuc
+RewriteRule ^amthuc/([a-zA-Z0-9\-_+,]+)-([0-9]+)-([0-9]+).html$ /index.php?module=dn&name=$1&cID=$2&id=$3 [L]
+
+#san pham
+RewriteRule ^quan-an/([a-zA-Z0-9\-_+,]+)-([0-9/-]+)-([0-9]+).html$ /index.php?module=dp&name=$1&cID=$2&id=$3 [L]
+RewriteRule ^([a-zA-Z0-9\-_+,]+)-([0-9/-]+).html$ /index.php?module=bp&name=$1&cID=$2 [L]
+RewriteRule ^([a-zA-Z0-9\-_+,]+)-([0-9/-]+)-trang([0-9]+).html$ /index.php?module=bp&name=$1&cID=$2&pt=$3 [L]
+
+#liên hệ
+RewriteRule ^lien-he.html$ /index.php?module=contact [L]
+RewriteRule ^thiet-ke-web-gia-re/dat-mua/ma-([0-9]+).html$ /index.php?module=cart&add=$1 [L]
+RewriteRule ^thiet-ke-web-gia-re/gui-mail-lien-he/loai-([a-zA-Z0-9\-_+,]+).html$ /index.php?module=memreg&object=$1 [L]
+
+RewriteRule ^index.html$ /index.php [L]
