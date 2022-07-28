@@ -267,7 +267,7 @@ if (!$user) {
             } elseif ($info_card == 1000000) {
                 $db->query("UPDATE `accounts` SET `point` = `point` + '30' WHERE `username` = '{$iduser}'");
             } else {
-                #nothing    
+                #nothing
             }
             $partner_id = '4562835561'; //API key, lấy từ website thesieure.vn thay vào trong cặp dấu '
             $partner_key = 'd24784e8a420f635d28a109c8b421b16'; //API secret lấy từ website thesieure.vn thay vào trong cặp dấu '
@@ -318,7 +318,7 @@ if (!$user) {
             $obj = json_decode($result);
             //$post = curl_post('http://api.naptudong.com/chargingws/v2', $dataPost);
             //$obj = json_decode($post);
-            
+
             if ($obj->status == 99) {
                 $now = getdate();
                 $db->query("INSERT INTO `history_card` (username,seri,code,name,menhgia,type_card,count_card,time) VALUES ('$iduser','$TxtSeri','$TxtMaThe','$name','$menhgia','$TxtCard','$vnd','$date_current')"); // lịch sử
